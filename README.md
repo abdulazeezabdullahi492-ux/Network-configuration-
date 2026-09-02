@@ -4,9 +4,7 @@
 
 ## Scenario
 
-A small organization has two departments, each with its own switched LAN. The
-departments need to communicate with each other while remaining on separate
-subnets, with a central router providing inter-department connectivity.
+A small organization has two departments, each with its own switched LAN. The departments need to communicate with each other while remaining on separate subnets, with a central router providing inter-department connectivity. Department A is further split into two VLANs to demonstrate segmentation within a single department.
 
 ## Requirements
 
@@ -24,17 +22,18 @@ subnets, with a central router providing inter-department connectivity.
 | Router0 | Inter-department gateway/router | Cisco 2911 |
 | Switch0 | Department A access switch | Cisco 2960-24TT |
 | Switch1 | Department B access switch | Cisco 2960-24TT |
-| PC0–PC3 | Department A end devices | Generic PC |
+| PC1–PC3 | Department A, VLAN1(defualt) | Generic PC |
+| PC0-PC2 | Department A, VLAN2 | Generic PC|
 | PC4–PC7 | Department B end devices | Generic PC |
 
 ## IP Addressing Scheme
 
 | Device/Interface | IP Address | Subnet Mask | Network |
 |---|---|---|---|
-| PC0 | 192.168.10.2/24 | 255.255.255.0 | Department A |
-| PC1 | 192.168.10.4/24 | 255.255.255.0 | Department A |
-| PC2 | 192.168.10.3/24 | 255.255.255.0 | Department A |
-| PC3 | 192.168.10.5/24 | 255.255.255.0 | Department A |
+| PC0(VLAN2) | 192.168.10.2/24 | 255.255.255.0 | Department A |
+| PC2(VLAN2) | 192.168.10.3/24 | 255.255.255.0 | Department A |
+| PC1(VLAN1) | 192.168.10.4/24 | 255.255.255.0 | Department A |
+| PC3(VLAN1) | 192.168.10.5/24 | 255.255.255.0 | Department A |
 | PC4 | 192.168.11.2/24 | 255.255.255.0 | Department B |
 | PC5 | 192.168.11.3/24 | 255.255.255.0 | Department B |
 | PC6 | 192.168.11.4/24 | 255.255.255.0 | Department B |
@@ -42,9 +41,10 @@ subnets, with a central router providing inter-department connectivity.
 
 ## Design Decisions
 
-- Used two separate /24 subnets (192.168.10.0/24 and 192.168.11.0/24) instead of one flat network, so each department's broadcast traffic stays contained within its own switch — this mirrors how a real multi-department office is typically segmented.
-- Connected Router0 directly to both subnets (one interface per LAN). Since there are only two networks and no additional routers in the path connected/static routing is enough at this scale.
-- Gave each department its own access switch
+- Split Department A into two VLANs (VLAN 1 for PC1/PC3, VLAN 2 for PC0/PC2) instead of leaving it as one flat subnet, to demonstrate logical segmentation within a single department — e.g. separating a team's regular staff from a subset needing isolated traffic.
+- Department B (Switch1) stays a single flat subnet with no VLANs, since there was no requirement to segment it further — this also shows a deliberate contrast: not every department needs the same level of segmentation.
+- Connected Router0 directly to both subnets/VLANS. Since there are only two networks(plus one extra VLAN) and no additional routers in the path connected/static routing is enough at this scale.
+
 
 ## Key Configuration
 
