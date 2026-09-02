@@ -75,8 +75,9 @@ Default Gateway: 192.168.10.1
 
 ```
 PC0> ping 192.168.11.10
-
 ```
+<img width="1920" height="1080" alt="Screenshot (36)" src="https://github.com/user-attachments/assets/d377f287-89a5-4244-854a-7237e43dd16c" />
+
 
 ```
 Router0#show ip route
