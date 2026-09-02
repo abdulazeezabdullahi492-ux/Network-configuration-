@@ -78,24 +78,11 @@ PC0> ping 192.168.11.10
 ```
 <img width="1920" height="1080" alt="Screenshot (36)" src="https://github.com/user-attachments/assets/d377f287-89a5-4244-854a-7237e43dd16c" />
 
-
 ```
 Router0#show ip route
-C    192.168.10.0/24 is directly connected, GigabitEthernet0/0
-C    192.168.11.0/24 is directly connected, GigabitEthernet0/1
 ```
-
-*(Replace the above with your actual captured output — see verification.md)*
-
-## Challenges & Lessons Learned
-
-<!-- Fill in once you've built and tested it: e.g. "Initially PC4 couldn't
-reach Department A — traced it to a missing default gateway on the PC's IP
-configuration." This section is what shows real troubleshooting, not just a
-working end state. -->
+<img width="1920" height="1080" alt="Screenshot (37)" src="https://github.com/user-attachments/assets/edf949a5-5b9c-4980-ad21-c8cd55bf09e0" />
 
 ## Files
 
-- [`project.pkt`](project.pkt) — Packet Tracer file
-- [`configs/`](configs/) — exported device configurations
-- [`verification.md`](verification.md) — full test/verification log
+- [`"C:\Users\HP\Documents\project 1.pkt"`](project.pkt) — Packet Tracer file
