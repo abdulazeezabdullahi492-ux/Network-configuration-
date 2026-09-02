@@ -85,4 +85,4 @@ Router0#show ip route
 
 ## Files
 
-- [`"C:\Users\HP\Documents\project 1.pkt"`](project.pkt) — Packet Tracer file
+- [`""`](project.pkt) — Packet Tracer file
