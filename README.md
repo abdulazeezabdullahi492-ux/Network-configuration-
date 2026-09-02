@@ -1,4 +1,4 @@
-# Network-configuration-
+# Network-configuration
 
 # Project 01: How to configure network on cisco packet tracer
 
