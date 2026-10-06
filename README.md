@@ -83,6 +83,3 @@ Router0#show ip route
 ```
 <img width="1920" height="1080" alt="Screenshot (37)" src="https://github.com/user-attachments/assets/edf949a5-5b9c-4980-ad21-c8cd55bf09e0" />
 
-## Files
-
-- [`""`](project.pkt) — Packet Tracer file
